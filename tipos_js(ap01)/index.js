@@ -23,18 +23,33 @@
 // const n4 = n1 + Number(n2)
 // console.log(n4)
 
-// Operadores de comparação de igualdade: == e ===
-console.log(1 == 1) // true
-console.log(1 === 1) // true
-console.log(1 == true) // true
-console.log(1 == [1]) // true
-// Não compara os tipos somente o conteúdo
-console.log(1 == '1') // true
-// Primeira se o tipo é igual e depois compara os valores
-console.log(1 === '1') // false
-// Qual é a diferença de null e undifined
-// null existe uma variável, mas não aponta para ninguem (não aponta)
-// undifined não defindo (não sabe se aponta ou não aponta)
-console.log(null == undefined) // true
-console.log([] == []) // false
-console.log([] == false) // true
+// // Operadores de comparação de igualdade: == e ===
+// console.log(1 == 1) // true
+// console.log(1 === 1) // true
+// console.log(1 == true) // true
+// console.log(1 == [1]) // true
+// // Não compara os tipos somente o conteúdo
+// console.log(1 == '1') // true
+// // Primeira se o tipo é igual e depois compara os valores
+// console.log(1 === '1') // false
+// // Qual é a diferença de null e undifined
+// // null existe uma variável, mas não aponta para ninguem (não aponta)
+// // undifined não defindo (não sabe se aponta ou não aponta)
+// console.log(null == undefined) // true
+// console.log([] == []) // false
+// console.log([] == false) // true
+
+// Coleções(vetores)
+v1 = [] //Lista
+console.log(v1.length)
+v1[0] = 2
+console.log(v1.length)
+v1[1] = 'abc'
+console.log(v1.length)
+v1[10] = 'João'
+console.log(v1.length)
+console.log(v1)
+
+for (let i = 0; i < v1.length; i ++){
+    console.log(v1[i]) // Podemos ver que o empty é undefined
+}
