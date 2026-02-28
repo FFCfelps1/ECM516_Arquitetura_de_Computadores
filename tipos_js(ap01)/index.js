@@ -39,17 +39,58 @@
 // console.log([] == []) // false
 // console.log([] == false) // true
 
-// Coleções(vetores)
-v1 = [] //Lista
-console.log(v1.length)
-v1[0] = 2
-console.log(v1.length)
-v1[1] = 'abc'
-console.log(v1.length)
-v1[10] = 'João'
-console.log(v1.length)
-console.log(v1)
+// // Coleções(vetores)
+// v1 = [] //Lista
+// console.log(v1.length)
+// v1[0] = 2
+// console.log(v1.length)
+// v1[1] = 'abc'
+// console.log(v1.length)
+// v1[10] = 'João'
+// console.log(v1.length)
+// console.log(v1)
 
-for (let i = 0; i < v1.length; i ++){
-    console.log(v1[i]) // Podemos ver que o empty é undefined
-}
+// for (let i = 0; i < v1.length; i ++){
+//     console.log(v1[i]) // Podemos ver que o empty é undefined
+// }
+
+// // Funções
+// function hello(){
+//     console.log('Oi')
+// }
+// hello()
+
+// function hello(nome){
+//     console.log(`Oi, ${nome}`)
+// }
+// hello('Maria')
+
+// function soma(a, b){
+//     return a + b
+// }
+// console.log(soma(2, 3))
+
+// const dobro = function(n){
+//     return 2 * n
+// }
+// console.log(dobro(6))
+
+// const triplo = function(n = 5){ // Se não colocar valores n será 5 por padrão
+//     return 3 * n
+// }
+// console.log(triplo())
+// console.log(triplo(undefined)) // Parenteses vazios é igual a undefined
+// console.log(triplo(10))
+
+// Arrow functions
+
+//(() => {console.log('Oi')})()
+const falarOi = () => {console.log('Oi')}
+falarOi()
+
+const falarOiNome = (nome) => {console.log(`Oi, ${nome}`)} // Tendo somente 1 parâmetro não precisa de parênteses e se tiver somente 1 intrução as chaves podem ser omitidas
+falarOiNome()
+falarOiNome('Maria')
+
+const soma = (a, b) => a + b // Return está implícito quando não tem chaves
+console.log(somar(2, 3))
