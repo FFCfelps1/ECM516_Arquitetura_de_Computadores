@@ -168,16 +168,16 @@
 // const res = f(17)
 // res()
 
-//Closure com arrow function
-const eAgora = () => {
-    let cont = 1
-    const f1 = () => console.log(cont)
-    cont++
-    const f2 = () => console.log(cont)
-    cont++
-    return {f1, f2}
-}
+// //Closure com arrow function
+// const eAgora = () => {
+//     let cont = 1
+//     const f1 = () => console.log(cont)
+//     cont++
+//     const f2 = () => console.log(cont)
+//     cont++
+//     return {f1, f2}
+// }
 
-const res = eAgora()
-res.f1()
-res.f2()
+// const res = eAgora()
+// res.f1()
+// res.f2()
