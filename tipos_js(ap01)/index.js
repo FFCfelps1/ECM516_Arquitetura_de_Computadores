@@ -157,13 +157,27 @@
 
 
 // //Closure
-// function f(){
+// function f(idade){
 //     let nome = "João"
 //     function g(){
-//         console.log(nome)
+//         console.log(`Meu nome é ${nome} e tenho ${idade}`)
 //     }
 //     return g
 // }
 
-// const res = f()
+// const res = f(17)
 // res()
+
+//Closure com arrow function
+const eAgora = () => {
+    let cont = 1
+    const f1 = () => console.log(cont)
+    cont++
+    const f2 = () => console.log(cont)
+    cont++
+    return {f1, f2}
+}
+
+const res = eAgora()
+res.f1()
+res.f2()
