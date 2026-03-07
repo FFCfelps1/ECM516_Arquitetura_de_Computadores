@@ -82,15 +82,44 @@
 // console.log(triplo(undefined)) // Parenteses vazios é igual a undefined
 // console.log(triplo(10))
 
-// Arrow functions
+// // Arrow functions
 
-//(() => {console.log('Oi')})()
-const falarOi = () => {console.log('Oi')}
-falarOi()
+// //(() => {console.log('Oi')})()
+// const falarOi = () => {console.log('Oi')}
+// falarOi()
 
-const falarOiNome = (nome) => {console.log(`Oi, ${nome}`)} // Tendo somente 1 parâmetro não precisa de parênteses e se tiver somente 1 intrução as chaves podem ser omitidas
-falarOiNome()
-falarOiNome('Maria')
+// const falarOiNome = (nome) => {console.log(`Oi, ${nome}`)} // Tendo somente 1 parâmetro não precisa de parênteses e se tiver somente 1 intrução as chaves podem ser omitidas
+// falarOiNome()
+// falarOiNome('Maria')
 
-const soma = (a, b) => a + b // Return está implícito quando não tem chaves
-console.log(somar(2, 3))
+// const somar = (a, b) => a + b // Return está implícito quando não tem chaves
+// console.log(somar(2, 3))
+
+// // Lista/ Arrays
+
+// v1 = []
+// console.log(v1.length) //tamanho do vetor
+// v1 [0] = 'abc'
+// console.log(v1.length) //tamanho do vetor
+// v1 [10] = 2.5
+// console.log(v1.length) //tamanho do vetor
+// console.log(v1)
+
+const nomes = ['Ana Maria', 'Antonio', 'Rodrigo', 'Cristina', 'Alex']
+
+// // Filtro
+// const apenasComA = nomes.filter(nome => nome.startsWith('A'))
+// console.log(apenasComA)
+
+// // Mapear
+// const iniciais = nomes.map(function f(nome){return nome.charAt(0)})
+// console.log(iniciais)
+
+// // Busca
+// const res = nomes.every(n => n.startsWith('A'))
+// console.log(res)
+
+// Soma
+const numeros = [1, 2, 3, 4]
+const res = numeros.reduce((ac, v) => ac + v)
+console.log(res)
