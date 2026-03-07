@@ -105,7 +105,7 @@
 // console.log(v1.length) //tamanho do vetor
 // console.log(v1)
 
-const nomes = ['Ana Maria', 'Antonio', 'Rodrigo', 'Cristina', 'Alex']
+// const nomes = ['Ana Maria', 'Antonio', 'Rodrigo', 'Cristina', 'Alex']
 
 // // Filtro
 // const apenasComA = nomes.filter(nome => nome.startsWith('A'))
@@ -119,7 +119,51 @@ const nomes = ['Ana Maria', 'Antonio', 'Rodrigo', 'Cristina', 'Alex']
 // const res = nomes.every(n => n.startsWith('A'))
 // console.log(res)
 
-// Soma
-const numeros = [1, 2, 3, 4]
-const res = numeros.reduce((ac, v) => ac + v)
-console.log(res)
+// // Soma
+// const numeros = [1, 2, 3, 4]
+// const res = numeros.reduce((ac, v) => ac + v)
+// console.log(res)
+
+// //Funções de Funções
+// let umaFuncao = function(){
+//     console.log("Fui armazeada em uma variável")
+//     return () => 'oi'
+// }
+// umaFuncao()
+
+// function f(funcao){
+//     console.log(funcao())
+// }
+
+// f(umaFuncao())
+
+// function f(funcao){
+//     funcao()
+// }
+
+// function g(){
+//     function outraFuncao(){
+//         console.log('Fui criada por g')
+//         return () => 'A'
+//     }
+//     return outraFuncao()
+// }
+
+// console.log(g()())
+
+// const res = g()
+// f(res)
+// console.log(res())
+
+
+// //Closure
+// function f(){
+//     let nome = "João"
+//     function g(){
+//         console.log(nome)
+//     }
+//     return g
+// }
+
+// const res = f()
+// res()
