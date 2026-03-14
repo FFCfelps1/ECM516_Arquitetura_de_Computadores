@@ -50,21 +50,21 @@
 // console.log(concessionaria.estoque[0])
 
 
-// Uma calculadora realiza as quatro operações fundamentais
-// soma: representada por uma arrow function que faz return
-//subtração: representa por uma arrow sem return
-// multiplicação: function regular
-// divisão: você escolhe
-//todas elas operam com dois operandos
+// // Uma calculadora realiza as quatro operações fundamentais
+// // soma: representada por uma arrow function que faz return
+// //subtração: representa por uma arrow sem return
+// // multiplicação: function regular
+// // divisão: você escolhe
+// //todas elas operam com dois operandos
 
-const calculadora = {
-    somar: (a, b) => {return a + b},
-    subtrair: (a, b) => a - b,
-    multiplicacao: function (a, b){return a * b},
-    divisao: (a, b) => a/b
-}
+// const calculadora = {
+//     somar: (a, b) => {return a + b},
+//     subtrair: (a, b) => a - b,
+//     multiplicacao: function (a, b){return a * b},
+//     divisao: (a, b) => a/b
+// }
 
-console.log(calculadora.somar(1,2))
-console.log(calculadora.subtrair(1,2))
-console.log(calculadora.multiplicacao(1,2))
-console.log(calculadora.divisao(1,2))
+// console.log(calculadora.somar(1,2))
+// console.log(calculadora.subtrair(1,2))
+// console.log(calculadora.multiplicacao(1,2))
+// console.log(calculadora.divisao(1,2))
