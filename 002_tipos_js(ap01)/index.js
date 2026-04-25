@@ -124,12 +124,12 @@
 // const res = numeros.reduce((ac, v) => ac + v)
 // console.log(res)
 
-// //Funções de Funções
-// let umaFuncao = function(){
-//     console.log("Fui armazeada em uma variável")
-//     return () => 'oi'
-// }
-// umaFuncao()
+//Funções de Funções
+let umaFuncao = function(){
+    console.log("Fui armazeada em uma variável")
+    return () => 'oi'
+}
+console.log(umaFuncao()())
 
 // function f(funcao){
 //     console.log(funcao())

@@ -90,6 +90,13 @@
 // f39195fb680f4d9ece16436084bbf620
 // api.openweathermap.org/data/2.5/forecast
 const axios = require('axios')
+const https = require('https')
+
+// Criar um agente HTTPS que desabilita a verificação de certificado (necessário para evitar erros SSL)
+const httpsAgent = new https.Agent({
+    rejectUnauthorized: false
+})
+
 const appid = 'ef0b0973b783e0614ac87612ec04344b'
 const baseURL = 'https://api.openweathermap.org/data/2.5/forecast'
 const q = 'Itu'
@@ -105,7 +112,7 @@ const getUrl = (url) => {
     if (url == undefined){
         console.log('O usuário deve colocar uma url válida')
     }
-    return axios.get(url)
+    return axios.get(url, { httpsAgent })
 }
 
 const chamadaGetUrl = async (url) => {

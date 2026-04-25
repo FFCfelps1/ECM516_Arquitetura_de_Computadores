@@ -49,44 +49,44 @@
 // // CPU: Predominantemente caracterizadas por ciclos de CPU
 // // IO Boudn: Predominantemente caracterizadas por operações de entrada e saída
 
-// const fs = require('fs')
-// const nomeArquivo = 'arquivo.txt'
-// // função callback
-// const exibirConteudo = (erro, conteudo) => {
-//     console.log('A')
-//     if (erro){
-//         console.log(`Erro: ${erro}`)
-//     }
-//     else{
-//         console.log(`Conteúdo: ${conteudo}`)
-//         const dobro = Number(conteudo.toString()) * 2
-//         // Mais uma função callback
-//         const finalizar = erro => {
-//             console.log(erro ? 'Deu erro ao escrever o dobro' : 'Ok, escreveu o dobro')
-//             console.log('C')
-//             const exibirDobro = (erro, conteudo) => {
-//                 console.log('E')
-//                 console.log(erro ? 'Deu erro ao escrever o dobro' : `Dobro: ${conteudo.toString()}`)
-//             }
-//             fs.readFile('dobro.txt', exibirDobro)
-//             console.log('F')
-//         }
-//         fs.writeFile('dobro.txt', dobro.toString(), finalizar)
-//         console.log('D')
-//     }
-// }
-// fs.readFile(nomeArquivo, exibirConteudo)
-// console.log('B')
-
-// Promise: processamento assincrono e mais organizado
-// 1 + 2 + 3 + ... + n
-// demorando...
-const calculoDemorando = n => {
-    let cont = 0
-    for(let i = 1; i <= n; i++)
-        cont += i
-    return cont
+const fs = require('fs')
+const nomeArquivo = 'arquivo.txt'
+// função callback
+const exibirConteudo = (erro, conteudo) => {
+    console.log('A')
+    if (erro){
+        console.log(`Erro: ${erro}`)
+    }
+    else{
+        console.log(`Conteúdo: ${conteudo}`)
+        const dobro = Number(conteudo.toString()) * 2
+        // Mais uma função callback
+        const finalizar = erro => {
+            console.log(erro ? 'Deu erro ao escrever o dobro' : 'Ok, escreveu o dobro')
+            console.log('C')
+            const exibirDobro = (erro, conteudo) => {
+                console.log('E')
+                console.log(erro ? 'Deu erro ao escrever o dobro' : `Dobro: ${conteudo.toString()}`)
+            }
+            fs.readFile('dobro.txt', exibirDobro)
+            console.log('F')
+        }
+        fs.writeFile('dobro.txt', dobro.toString(), finalizar)
+        console.log('D')
+    }
 }
+fs.readFile(nomeArquivo, exibirConteudo)
+console.log('B')
 
-const res = calculoDemorando(1000)
-console.log(res)
+// // Promise: processamento assincrono e mais organizado
+// // 1 + 2 + 3 + ... + n
+// // demorando...
+// const calculoDemorando = n => {
+//     let cont = 0
+//     for(let i = 1; i <= n; i++)
+//         cont += i
+//     return cont
+// }
+
+// const res = calculoDemorando(1000)
+// console.log(res)
