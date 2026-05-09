@@ -1,3 +1,4 @@
+const axios = require('axios')
 const express = require('express')
 const app = express()
 app.use(express.json()) //middleware
@@ -21,7 +22,7 @@ app.get('/lembretes', (req, res) => {
 	res.json(lembretes)
 })
 
-app.post('/lembretes', (req, res) => {
+app.post('/lembretes', async (req, res) => {
     // incrementar o id 
     // extrair propriedade texto do corpo da requisicao
     // cadastrar na base, tal qual mostra o exemplo
@@ -33,6 +34,12 @@ app.post('/lembretes', (req, res) => {
         texto
     }
     lembretes[id] = lembrete
+
+    await axios.post('https://localhost:10000/eventos', {
+        tipo : "LembreteCriado",
+        dados : lembrete
+    })
+
     res.status(201).json(lembrete)
       
 })
