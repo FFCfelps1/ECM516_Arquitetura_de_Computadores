@@ -1,3 +1,4 @@
+const axios = require('axios')
 const express = require('express')
 const {v4: uuidv4} = require('uuid')
 const app = express()
@@ -11,7 +12,7 @@ app.get('/lembretes/:id/observacoes', (req, res) => {
     res.send(oberservacoesPorLembreteId[req.params.id] || [])
 })
 
-app.post('/lembretes/:id/observacoes', (req, res) => {
+app.post('/lembretes/:id/observacoes', async (req, res) => {
     const idObs = uuidv4()
     const {texto} = req.body
     const id = req.params.id
@@ -19,8 +20,19 @@ app.post('/lembretes/:id/observacoes', (req, res) => {
     const oberservacoesDoLembrete = oberservacoesPorLembreteId[id] ||  []
     oberservacoesDoLembrete.push({id: idObs, texto})
     oberservacoesPorLembreteId[id] = oberservacoesDoLembrete
-
+    await axios.post('http://localhost:10000/eventos', {
+        tipo: 'Oberservacao Criada',
+        dados: {
+            id: idObs, texto: texto, lembreteId: id
+        }
+    })
     res.status(201).send(oberservacoesDoLembrete)
+})
+
+app.post('/eventos', (req, res) => {
+    const evento = req.body
+    console.log(evento)
+    res.end()
 })
 
 app.listen(5000, (() => {

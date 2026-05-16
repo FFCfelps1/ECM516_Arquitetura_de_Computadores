@@ -15,16 +15,21 @@ let id = 0
 
 app.post('/eventos', async (req, res) => {
     const evento = req.body
+    console.log(evento)
 
     try {
-        await axios.post('http://localhost:4000/eventos')
+        await axios.post('http://localhost:4000/eventos', evento)
     }
     catch (e){}
 
     try {        
-       await axios.post('http://localhost:5000/eventos')
+       await axios.post('http://localhost:5000/eventos', evento)
     }
     catch(e){}
+
+    try{
+        await axios.post('http://localhost:6000/eventos', evento)
+    }catch(e){}
 
     res.end()
 })

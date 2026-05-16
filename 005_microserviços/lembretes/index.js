@@ -35,13 +35,19 @@ app.post('/lembretes', async (req, res) => {
     }
     lembretes[id] = lembrete
 
-    await axios.post('https://localhost:10000/eventos', {
+    await axios.post('http://localhost:10000/eventos', {
         tipo : "LembreteCriado",
         dados : lembrete
     })
 
     res.status(201).json(lembrete)
       
+})
+
+app.post('/eventos', (req, res) => {
+    const evento = req.body
+    console.log(evento)
+    res.end()
 })
 
 const port = 4000
